@@ -68,13 +68,13 @@ const Navbar = () => {
         </nav>
 
         {isMobileMenuVisible && (
-          <div className="mt-6 mx-auto flex sm:hidden flex-col gap-5 glass-dark rounded-md px-6 py-3">
+          <div className="mt-6 mx-auto flex sm:hidden flex-col gap-5 bg-brand-nav rounded-md px-6 py-3">
             <div className="flex flex-col gap-4">
               {navLinks.map((link, index) => (
                 <a
                   href={link.href}
                   key={index}
-                  className="text-text-muted hover:text-text-primary transition-colors duration-300"
+                  className="text-text-primary hover:text-text-primary transition-colors duration-300"
                 >
                   {link.label}
                 </a>
