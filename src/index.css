@@ -51,3 +51,158 @@
     inset 0 -18px 30px color-mix(in srgb, #2a1710 14%, transparent),
     0 12px 34px color-mix(in srgb, #000000 42%, transparent);
 }
+
+@keyframes slow-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.06);
+  }
+  50% {
+    transform: translate(-15px, -20px) scale(0.98);
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.08);
+  }
+}
+
+@keyframes hero-star-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes hero-core-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(-50%) scale(0.92);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+@keyframes hero-nebula {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+.animate-hero-star-pulse {
+  animation: hero-star-pulse 3.8s ease-in-out infinite;
+}
+
+.animate-hero-core-pulse {
+  animation: hero-core-pulse 9s ease-in-out infinite;
+}
+
+.animate-hero-nebula {
+  animation: hero-nebula 16s ease-in-out infinite;
+}
+
+.star-size-small {
+  width: 4px;
+  height: 4px;
+}
+
+.star-size-med {
+  width: 7px;
+  height: 7px;
+}
+
+.star-size-large {
+  width: 10px;
+  height: 10px;
+}
+
+@media (max-width: 640px) {
+  .star-size-small {
+    width: 3px;
+    height: 3px;
+  }
+  .star-size-med {
+    width: 5px;
+    height: 5px;
+  }
+  .star-size-large {
+    width: 8px;
+    height: 8px;
+  }
+
+  .animate-hero-nebula {
+    filter: saturate(0.9) blur(14px);
+    opacity: 0.9;
+  }
+
+  .animate-hero-core-pulse {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-nebula,
+  .animate-hero-core-pulse,
+  .animate-hero-star-pulse,
+  .animate-hero-nebula,
+  .slow-drift {
+    animation: none !important;
+  }
+}
+
+/* Dense background star grid (cheap many stars) */
+.star-grid {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.85) 0.9px,
+    transparent 1px
+  );
+  background-size: 8px 8px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.03));
+  pointer-events: none;
+}
+
+/* twinkle variation for subtle hue/brightness shifts */
+@keyframes hero-twinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+.animate-hero-star-pulse {
+  animation: hero-twinkle 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@media (min-resolution: 2dppx) {
+  .star-grid {
+    background-size: 6px 6px;
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 420px) {
+  .star-grid {
+    background-size: 12px 12px;
+    opacity: 0.22;
+  }
+}
