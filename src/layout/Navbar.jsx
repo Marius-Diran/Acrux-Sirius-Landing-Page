@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Button from "../components/Button";
 import logo from "../assets/AcruxSiriuslogo-1.png";
@@ -13,6 +13,16 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const openMobileMenu = () => {
     setIsMobileMenuOpen(true);
@@ -37,7 +47,7 @@ const Navbar = () => {
 
   return (
     <section>
-      <header className="w-full fixed p-4 top-0 z-50">
+      <header className={`w-full fixed p-4 top-0 z-50 transition-colors duration-300 ${isScrolled ? "bg-brand-primary/80 backdrop-blur-md" : ""}`}>
         <nav className="container flex justify-between items-center py-3 mx-auto">
           <a href="#" className="w-10">
             <img src={logo} alt="Logo" className="w-full" />

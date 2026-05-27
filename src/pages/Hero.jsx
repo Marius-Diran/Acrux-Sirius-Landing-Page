@@ -48,6 +48,7 @@ const nebulaClouds = [
 
 import React, { useEffect, useMemo, useState } from "react";
 import Button from "../components/Button";
+import heroImage from "../assets/AcruxSiriusHeroimg.png";
 
 const Hero = () => {
   const [starField, setStarField] = useState(() => generateStars(300));
@@ -73,9 +74,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden z-10 bg-[#1d1b3a]">
+    <section className="relative h-screen flex items-center justify-center z-10 bg-brand-primary">
       <div
-        className="absolute inset-0"
+        className="relative flex items-center justify-center"
         style={{
           zIndex: 0,
           backgroundImage:
@@ -145,24 +146,34 @@ const Hero = () => {
               "color-mix(in srgb, var(--color-brand-nav) 20%, transparent)",
           }}
         />
-        <div className="container mx-auto pt-40 px-6 text-white">
-          <h1 className="text-center text-3xl leading-relaxed sm:text-5xl sm:leading-tight">
-            The Leading Light{" "}
-            <span className="block text-text-secondary">
-              of Digital Transformation
-            </span>
-          </h1>
-          <p className="text-center text-lg sm:text-xl mt-6 max-w-2xl mx-auto text-text-muted">
-            At Acrux-Sirius Technologies, we don't just build technology — we
-            craft the future. Empowering businesses to navigate the digital
-            landscape with confidence.
-          </p>
-          <div className="flex justify-center mt-10">
-            <Button>Get Started</Button>
-            <button className="ml-4 bg-bg-btn-secondary text-text-primary rounded-full px-6 py-3">
-              Learn More
-            </button>
-          </div>
+      </div>
+
+      {/* Hero Section Contents */}
+      <div className="container mx-auto mt-50 px-6 text-white sm:mt-[90vh]">
+        <h1 className="text-center text-3xl leading-relaxed sm:text-5xl sm:leading-tight">
+          The Leading Light{" "}
+          <span className="block text-text-secondary">
+            of Digital Transformation
+          </span>
+        </h1>
+        <p className="text-center text-lg sm:text-xl mt-6 max-w-2xl mx-auto text-text-muted">
+          At Acrux-Sirius Technologies, we don't just build technology — we
+          craft the future. Empowering businesses to navigate the digital
+          landscape with confidence.
+        </p>
+        <div className="flex justify-center mt-7">
+          <Button>Get Started</Button>
+          <button className="ml-4 bg-bg-btn-secondary text-text-primary rounded-full px-6 py-3">
+            Learn More
+          </button>
+        </div>
+
+        <div className="w-full mt-10 mb-10 sm:w-4/5 sm:mx-auto">
+          <img
+            src={heroImage}
+            alt="Hero Image"
+            className="w-full object-cover"
+          />
         </div>
       </div>
     </section>
