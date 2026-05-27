@@ -10,6 +10,7 @@
   --color-text-muted: #888888;
 
   --color-bg-btn-primary: #cd93ff;
+  --color-bg-btn-secondary: #8354f2;
 }
 
 @layer base {

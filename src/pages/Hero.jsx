@@ -7,6 +7,7 @@ const generateStars = (count) =>
     const r = Math.random();
     const sizeKind = r > 0.92 ? "large" : r > 0.72 ? "med" : "small";
     const bright = Math.random() > 0.78;
+    const isWhite = Math.random() > 0.85;
 
     return {
       x,
@@ -15,36 +16,38 @@ const generateStars = (count) =>
       delay: Number(delay.toFixed(2)),
       sizeKind,
       bright,
+      isWhite,
     };
   });
 
 const nebulaClouds = [
   {
     className: "left-[-12%] top-[8%] h-28 w-28 sm:h-56 sm:w-56 md:h-72 md:w-72",
-    color: "var(--color-brand-secondary)",
-    mix: 0.25,
+    color: "#6b5fd8",
+    mix: 0.35,
     delay: "0s",
     duration: "18s",
   },
   {
     className:
       "right-[-8%] top-[20%] h-36 w-36 sm:h-72 sm:w-72 md:h-96 md:w-96",
-    color: "var(--color-brand-nav)",
-    mix: 0.18,
+    color: "#4a3f8f",
+    mix: 0.28,
     delay: "-6s",
     duration: "24s",
   },
   {
     className:
       "left-[24%] bottom-[-10%] h-52 w-52 sm:h-96 sm:w-96 md:h-[28rem] md:w-[28rem]",
-    color: "var(--color-text-secondary)",
-    mix: 0.12,
+    color: "#2d2558",
+    mix: 0.22,
     delay: "-10s",
     duration: "28s",
   },
 ];
 
 import React, { useEffect, useMemo, useState } from "react";
+import Button from "../components/Button";
 
 const Hero = () => {
   const [starField, setStarField] = useState(() => generateStars(300));
@@ -70,18 +73,18 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden z-10 bg-[#090816]">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden z-10 bg-[#1d1b3a]">
       <div
-        className="fixed inset-0"
+        className="absolute inset-0"
         style={{
           zIndex: 0,
           backgroundImage:
-            "radial-gradient(circle at top, color-mix(in srgb, var(--color-brand-secondary) 28%, transparent) 0%, radial-gradient(circle at 75% 20%, color-mix(in srgb, var(--color-brand-nav) 18%, transparent) 0%, radial-gradient(circle at 50% 80%, color-mix(in srgb, var(--color-text-secondary) 16%, transparent) 0%, linear-gradient(180deg, #090816 0%, #070712 55%, #04050b 100%))",
+            "radial-gradient(circle at top, color-mix(in srgb, var(--color-brand-secondary) 12%, transparent) 0%, radial-gradient(circle at 75% 20%, color-mix(in srgb, var(--color-brand-nav) 8%, transparent) 0%, radial-gradient(circle at 50% 80%, color-mix(in srgb, var(--color-text-secondary) 8%, transparent) 0%, transparent)))",
         }}
       />
 
       <div
-        className="fixed inset-0 overflow-hidden pointer-events-none"
+        className="absolute inset-0 overflow-hidden pointer-events-none"
         style={{ zIndex: 0 }}
       >
         {nebulaClouds.map((cloud, index) => (
@@ -119,12 +122,16 @@ const Hero = () => {
             <div
               className={`rounded-full animate-hero-star-pulse star-size-${star.sizeKind}`}
               style={{
-                background: star.bright
-                  ? "var(--color-brand-secondary)"
-                  : "color-mix(in srgb, var(--color-brand-secondary) 60%, transparent)",
-                boxShadow: star.bright
-                  ? "0 0 14px color-mix(in srgb, var(--color-brand-secondary) 96%, transparent), 0 0 28px color-mix(in srgb, var(--color-brand-nav) 45%, transparent)"
-                  : "0 0 10px color-mix(in srgb, var(--color-brand-secondary) 70%, transparent)",
+                background: star.isWhite
+                  ? "#ffffff"
+                  : star.bright
+                    ? "var(--color-brand-secondary)"
+                    : "color-mix(in srgb, var(--color-brand-secondary) 60%, transparent)",
+                boxShadow: star.isWhite
+                  ? "0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.4)"
+                  : star.bright
+                    ? "0 0 14px color-mix(in srgb, var(--color-brand-secondary) 96%, transparent), 0 0 28px color-mix(in srgb, var(--color-brand-nav) 45%, transparent)"
+                    : "0 0 10px color-mix(in srgb, var(--color-brand-secondary) 70%, transparent)",
                 animationDelay: `${star.delay * 0.7}s`,
               }}
             />
@@ -150,6 +157,12 @@ const Hero = () => {
             craft the future. Empowering businesses to navigate the digital
             landscape with confidence.
           </p>
+          <div className="flex justify-center mt-10">
+            <Button>Get Started</Button>
+            <button className="ml-4 bg-bg-btn-secondary text-text-primary rounded-full px-6 py-3">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
     </section>
