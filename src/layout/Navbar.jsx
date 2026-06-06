@@ -47,7 +47,9 @@ const Navbar = () => {
 
   return (
     <section>
-      <header className={`w-full fixed p-4 top-0 z-50 transition-colors duration-300 ${isScrolled ? "bg-brand-primary/80 backdrop-blur-md" : ""}`}>
+      <header
+        className={`w-full fixed p-4 top-0 z-50 transition-colors duration-300 ${isScrolled ? "bg-brand-primary/80 backdrop-blur-md" : ""}`}
+      >
         <nav className="container flex justify-between items-center py-3 mx-auto">
           <a href="#" className="w-10">
             <img src={logo} alt="Logo" className="w-full" />
@@ -68,7 +70,7 @@ const Navbar = () => {
           <div className="hidden sm:flex items-center gap-4">
             {/* CTA Button */}
             <Button>
-              Contact Me <ArrowUpRight size={18} />
+              Contact Us <ArrowUpRight size={18} />
             </Button>
           </div>
           {/* Mobile Menu Button */}
@@ -92,7 +94,7 @@ const Navbar = () => {
             </div>
 
             <Button>
-              Contact Me <ArrowUpRight size={18} />
+              Contact Us <ArrowUpRight size={18} />
             </Button>
           </div>
         )}

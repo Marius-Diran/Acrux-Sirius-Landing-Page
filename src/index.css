@@ -3,14 +3,17 @@
 @theme {
   --color-brand-primary: #1d1b3a;
   --color-brand-secondary: #cd93ff;
-  --color-brand-nav: #8354f2;
+  --color-brand-nav: #cd93ff;
 
   --color-text-primary: #ffffff;
   --color-text-secondary: #cd93ff;
   --color-text-muted: #888888;
 
-  --color-bg-btn-primary: #cd93ff;
-  --color-bg-btn-secondary: #8354f2;
+  --color-bg-btn-primary: #8354f2;
+  --color-bg-btn-secondary: #cd93ff;
+
+  --color-card-bg: rgba(131, 84, 242, 0.08);
+  --color-card-border: rgba(131, 84, 242, 0.2);
 }
 
 @layer base {
@@ -19,6 +22,9 @@
   }
 
   body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Space Grotesk", sans-serif;
     background-color: #1d1b3a;
     color: #ffffff;
@@ -81,6 +87,16 @@
   }
 }
 
+@keyframes smooth-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 .animate-hero-star-pulse {
   animation: hero-star-pulse 3.8s ease-in-out infinite;
 }
@@ -91,6 +107,10 @@
 
 .animate-hero-nebula {
   animation: hero-nebula 16s ease-in-out infinite;
+}
+
+.animate-smooth-bounce {
+  animation: smooth-bounce 3.2s ease-in-out infinite;
 }
 
 .star-size-small {
@@ -136,6 +156,7 @@
   .animate-hero-nebula,
   .animate-hero-core-pulse,
   .animate-hero-star-pulse,
+  .animate-smooth-bounce,
   .animate-hero-nebula,
   .slow-drift {
     animation: none !important;
