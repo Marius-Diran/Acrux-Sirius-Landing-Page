@@ -48,7 +48,11 @@ const Navbar = () => {
   return (
     <section>
       <header
-        className={`w-full fixed p-4 top-0 z-50 transition-colors duration-300 ${isScrolled ? "bg-brand-primary/80 backdrop-blur-md" : ""}`}
+        className={`w-full fixed p-4 top-0 z-50 transition-all duration-300 ${
+          isScrolled || isMobileMenuOpen
+            ? "bg-brand-primary/80 backdrop-blur-md"
+            : ""
+        }`}
       >
         <nav className="container flex justify-between items-center py-3 mx-auto">
           <a href="#" className="w-10">
@@ -80,7 +84,7 @@ const Navbar = () => {
         </nav>
 
         {isMobileMenuVisible && (
-          <div className="mt-6 mx-auto flex sm:hidden flex-col gap-5 bg-brand-nav rounded-md px-6 py-3">
+          <div className={`mt-6 mx-auto flex sm:hidden flex-col gap-5 bg-brand-nav rounded-md px-6 py-3 ${isMobileMenuOpen ? "mobile-menu-enter" : "mobile-menu-exit"}`}>
             <div className="flex flex-col gap-4">
               {navLinks.map((link, index) => (
                 <a

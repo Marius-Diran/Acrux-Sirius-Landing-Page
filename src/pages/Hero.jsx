@@ -116,7 +116,7 @@ const Hero = () => {
             {heroCards.map((card, idx) => {
               return (
                 <div key={idx}>
-                  <div className="flex flex-col items-center gap-2 text-center mt-10 bg-card-bg border border-solid border-card-border rounded-lg py-6">
+                  <div className="flex flex-col items-center gap-2 text-center mt-10 bg-card-bg border border-solid border-card-border rounded-lg py-12">
                     <h2
                       className="font-bold text-2xl"
                       style={{
