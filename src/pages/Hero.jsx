@@ -1,5 +1,5 @@
 import { Icon } from './Icons.jsx'
-import heroBanner from '../assets/hero-banner.png'
+import heroBanner from '../assets/hero-banner.PNG'
 
 const values = [
   ['spark', 'Innovation', 'Driven'],
