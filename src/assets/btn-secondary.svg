@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96">
+<defs>
+  <linearGradient id="purpleBtn" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#4c08b9"/>
+    <stop offset="0.55" stop-color="#700ad1"/>
+    <stop offset="1" stop-color="#340372"/>
+  </linearGradient>
+  <linearGradient id="darkCard" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#150326"/>
+    <stop offset="1" stop-color="#070416"/>
+  </linearGradient>
+</defs>
+<rect x="2" y="2" width="356" height="92" rx="46" fill="url(#purpleBtn)" stroke="#8d45f0" stroke-width="2"/>
+<text x="40" y="59" font-family="Arial, Helvetica, sans-serif" font-size="29" fill="white">Get In Touch</text>
+<circle cx="312" cy="48" r="30" fill="#ffffff10" stroke="#ffffff55" stroke-width="2"/>
+<path d="M299 48H321 M312 38L322 48L312 58" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

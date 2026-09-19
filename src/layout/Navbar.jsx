@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import Button from "../components/Button";
 import logo from "../assets/AcruxSiriuslogo-1.png";
 
 const navLinks = [
   { href: "#", label: "Home" },
   { href: "#about", label: "About Me" },
+  { href: "#our-companies", label: "Our Companies" },
   { href: "#services", label: "Services" },
+  { href: "#projects", label: "Projects" },
+  { href: "#founder", label: "Founder" },
+  { href: "#insight", label: "Insight" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -74,7 +78,7 @@ const Navbar = () => {
           <div className="hidden sm:flex items-center gap-4">
             {/* CTA Button */}
             <Button>
-              Contact Us <ArrowUpRight size={18} />
+              Let's Work Together <ArrowRight size={18} />
             </Button>
           </div>
           {/* Mobile Menu Button */}
@@ -84,7 +88,9 @@ const Navbar = () => {
         </nav>
 
         {isMobileMenuVisible && (
-          <div className={`mt-6 mx-auto flex sm:hidden flex-col gap-5 bg-brand-nav rounded-md px-6 py-3 ${isMobileMenuOpen ? "mobile-menu-enter" : "mobile-menu-exit"}`}>
+          <div
+            className={`mt-6 mx-auto flex sm:hidden flex-col gap-5 bg-brand-nav rounded-md px-6 py-3 ${isMobileMenuOpen ? "mobile-menu-enter" : "mobile-menu-exit"}`}
+          >
             <div className="flex flex-col gap-4">
               {navLinks.map((link, index) => (
                 <a
@@ -98,7 +104,7 @@ const Navbar = () => {
             </div>
 
             <Button>
-              Contact Us <ArrowUpRight size={18} />
+              Let's Work Together <ArrowRight size={18} />
             </Button>
           </div>
         )}

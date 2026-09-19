@@ -1,5 +1,3 @@
-import React from "react";
-import Button from "../components/Button";
 import robotIcon from "../assets/icons8-robot-100.png";
 import cellphoneIcon from "../assets/icons8-cellphone-100.png";
 import analyticsIcon from "../assets/icons8-analytics-100.png";
@@ -53,7 +51,7 @@ const About = () => {
             {aboutCards.map((card, idx) => {
               return (
                 <div
-                  className="about-card bg-card-bg border border-solid border-card-border p-6 rounded-lg"
+                  className="about-card bg-card-bg border border-solid border-card-border p-6 rounded-xl"
                   key={idx}
                 >
                   <img
