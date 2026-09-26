@@ -1,8 +1,8 @@
 import { Icon } from './Icons.jsx'
-import projectTechhub from '../assets/project-techhub.png'
-import projectGlxArena from '../assets/project-glx-arena.png'
-import projectLuxury from '../assets/project-luxury.png'
-import projectCommercial from '../assets/project-commercial.png'
+import projectTechhub from '../assets/project-techhub.jpg'
+import projectGlxArena from '../assets/project-glx-arena.jpg'
+import projectLuxury from '../assets/project-luxury.jpg'
+import projectCommercial from '../assets/project-commercial.jpg'
 
 const projects = [
   [projectTechhub, 'Tech Innovation Hub', 'Ongoing'],
@@ -23,7 +23,7 @@ export default function Projects() {
         <div className="project-row">
           {projects.map(([image, title, status]) => (
             <article className="project-card" key={title}>
-              <img src={image} alt="" />
+              <img src={image} alt={`${title} visual`} />
               <div className="project-caption">
                 <h3>{title}</h3>
                 <p>{status}</p>

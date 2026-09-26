@@ -130,17 +130,35 @@ button {
   gap: 24px;
 }
 .brand {
-  width: 188px;
-  flex: 0 0 188px;
+  width: 205px;
+  flex: 0 0 205px;
   height: 56px;
-  overflow: hidden;
   display: flex;
   align-items: center;
+  gap: 11px;
 }
 .brand img {
-  width: 170px;
-  transform: scale(1.22);
-  transform-origin: left center;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.92;
+  letter-spacing: 0.12em;
+}
+.brand-name strong {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+}
+.brand-name span {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
 }
 .desktop-nav {
   flex: 1;
@@ -434,7 +452,11 @@ button {
   background: #171008;
 }
 .company-logo-icon {
-  object-fit: cover;
+  padding: 8px;
+  object-fit: contain;
+  border: 1px solid rgba(168, 81, 255, 0.72);
+  background: #130727;
+  box-shadow: 0 0 20px rgba(108, 34, 194, 0.3);
 }
 .company-kicker {
   text-align: center;
@@ -846,6 +868,13 @@ button {
 }
 .cta-logo {
   width: 70px;
+  height: 70px;
+  padding: 10px;
+  object-fit: contain;
+  border: 1px solid rgba(168, 81, 255, 0.72);
+  border-radius: 50%;
+  background: #130727;
+  box-shadow: 0 0 22px rgba(108, 34, 194, 0.32);
   justify-self: center;
 }
 .cta-copy h2 {
@@ -875,13 +904,31 @@ button {
   gap: 26px;
   padding-top: 11px;
 }
+.footer-lockup {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 12px;
+}
 .footer-brand img {
-  width: 165px;
-  height: 56px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  object-position: left center;
-  transform: scale(1.22);
-  transform-origin: left center;
+}
+.footer-brand-name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-brand-name strong {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.11em;
+}
+.footer-brand-name span {
+  color: #a851ff;
+  font-size: 8px;
+  letter-spacing: 0.22em;
 }
 .footer-brand p {
   margin: 4px 0 12px;
@@ -992,11 +1039,18 @@ button {
     padding: 12px 0;
   }
   .brand {
-    width: 150px;
-    flex-basis: 150px;
+    width: 185px;
+    flex-basis: 185px;
   }
   .brand img {
-    width: 142px;
+    width: 40px;
+    height: 40px;
+  }
+  .brand-name strong {
+    font-size: 15px;
+  }
+  .brand-name span {
+    font-size: 8px;
   }
   .menu-button {
     display: grid;

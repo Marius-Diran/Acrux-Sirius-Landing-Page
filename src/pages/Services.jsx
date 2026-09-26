@@ -1,8 +1,8 @@
 import { Icon } from './Icons.jsx'
-import serviceDigital from '../assets/service-digital.png'
-import serviceGaming from '../assets/service-gaming.png'
-import serviceInfra from '../assets/service-infra.png'
-import serviceConsulting from '../assets/service-consulting.png'
+import serviceDigital from '../assets/service-digital.jpg'
+import serviceGaming from '../assets/service-gaming.jpg'
+import serviceInfra from '../assets/service-infra.jpg'
+import serviceConsulting from '../assets/service-consulting.jpg'
 
 const services = [
   [serviceDigital, 'code', 'Digital Solutions', 'Web, mobile and software solutions built to solve real problems.'],
@@ -31,7 +31,7 @@ export default function Services() {
           {services.map(([image, icon, title, copy]) => (
             <article className="service-card" key={title}>
               <div className="service-image-wrap">
-                <img src={image} alt="" />
+                <img src={image} alt={`${title} visual`} />
                 <span className="service-icon"><Icon name={icon} size={21} /></span>
               </div>
               <div className="service-body">

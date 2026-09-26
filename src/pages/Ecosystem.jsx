@@ -1,5 +1,5 @@
 import { Icon } from './Icons.jsx'
-import logoCircle from '../assets/logo-circle.svg'
+import logoMark from '../assets/AcruxSiriuslogo-1.png'
 
 const companies = [
   {
@@ -33,7 +33,7 @@ const companies = [
 
 function CompanyIcon({ company }) {
   if (company.icon === 'logo') {
-    return <img className="company-logo-icon" src={logoCircle} alt="" />
+    return <img className="company-logo-icon" src={logoMark} alt="Acrux Sirius Technologies logo" />
   }
   return <span className={`company-icon ${company.kind}`}><Icon name={company.icon} size={28} /></span>
 }

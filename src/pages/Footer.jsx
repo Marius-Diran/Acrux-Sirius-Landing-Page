@@ -1,12 +1,18 @@
 import { Icon } from './Icons.jsx'
-import footerLogo from '../assets/footer-logo.svg'
+import footerLogo from '../assets/AcruxSiriuslogo-1.png'
 
 export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src={footerLogo} alt="Acrux Sirius Technologies" />
+          <div className="footer-lockup">
+            <img src={footerLogo} alt="Acrux Sirius Technologies" />
+            <div className="footer-brand-name">
+              <strong>ACRUX SIRIUS</strong>
+              <span>TECHNOLOGIES</span>
+            </div>
+          </div>
           <p>Building the future. Powering possibilities. Through innovation, technology, gaming and infrastructure, we create solutions that impact lives and transform communities.</p>
           <div className="socials">
             <a href="#" aria-label="LinkedIn"><Icon name="linkedin" size={17} /></a>

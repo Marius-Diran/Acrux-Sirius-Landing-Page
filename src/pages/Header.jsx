@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Icon } from './Icons.jsx'
-import logoPrimary from '../assets/logo-primary.svg'
+import logoPrimary from '../assets/AcruxSiriuslogo-1.png'
 
 const links = [
   ['Home', '#home'],
@@ -21,6 +21,10 @@ export default function Header() {
       <div className="container header-inner">
         <a href="#home" className="brand" aria-label="Acrux Sirius home">
           <img src={logoPrimary} alt="Acrux Sirius Technologies" />
+          <span className="brand-name">
+            <strong>ACRUX</strong>
+            <span>SIRIUS</span>
+          </span>
         </a>
 
         <nav className={`desktop-nav ${open ? 'mobile-open' : ''}`} aria-label="Primary navigation">
